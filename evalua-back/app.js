@@ -9,7 +9,7 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 const cors         = require('cors')
-const passport     = require('./helpers/passport')
+const passport     = require('./helpers/plm')
 const session      = require('express-session')
 const MongoStore   = require('connect-mongo')(session)
 

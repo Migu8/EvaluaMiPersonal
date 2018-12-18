@@ -4,12 +4,10 @@ const plm = require('passport-local-mongoose')
 
 const userSchema = new Schema({
   name: String,
-  lastName: String,
   email: {
     type:String,
     unique:true
   },
-  profilePic: String,
   role:{
     type:String,
     enum: ['Employee', 'Admin'],
@@ -19,6 +17,6 @@ const userSchema = new Schema({
   timestamps:true
 })
 
-userSchema.plugin(pln, {usernameField: 'email'})
+userSchema.plugin(plm, {usernameField: 'email'})
 
 module.exports = mongoose.model('User', userSchema)

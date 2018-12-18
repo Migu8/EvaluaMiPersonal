@@ -8,9 +8,7 @@ mongoose.connect('mongodb://admin:admin123@ds139675.mlab.com:39675/perritos')
 const admins=[
   {
     name: 'Joshelo',
-    lastName: 'Pedraza',
     email: 'jpedraza@mail.com',
-    profilePic: 'https://static.oficinaempleo.com/blog/wp-content/uploads/2015/08/recursos-humanos.jpg',
     role: 'Admin'
   }
 ]
