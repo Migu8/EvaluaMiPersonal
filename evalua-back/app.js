@@ -8,10 +8,13 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
-
+const cors         = require('cors')
+const passport     = require('./helpers/passport')
+const session      = require('express-session')
+const MongoStore   = require('connect-mongo')(session)
 
 mongoose
-  .connect('mongodb://localhost/evalua-back', {useNewUrlParser: true})
+  .connect(process.env.DB, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -29,6 +32,21 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+//Session
+app.use(session({
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection,
+    ttl:24*60*60
+  }),
+  secret:process.env.SECRET,
+  resave:true,
+  saveUninitialized:true,
+  cookie:{httpOnly:true, maxAge:60000}
+}))
+
+app.use(passport.initialize())
+app.use(passport.session())
 
 // Express View engine setup
 
@@ -49,10 +67,16 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
 
+app.use(cors({
+  credentials:true,
+  origin:['http://localhost:3000']
+}))
 
-
+const authRoutes = require('./routes/auth')
 const index = require('./routes/index');
 app.use('/', index);
+//Duda
+app.use('/employees', authRoutes)
 
 
 module.exports = app;

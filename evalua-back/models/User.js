@@ -10,9 +10,10 @@ const userSchema = new Schema({
     unique:true
   },
   profilePic: String,
-  area:{
+  role:{
     type:String,
-    enum: ['Employee', 'HR', 'Admin']
+    enum: ['Employee', 'Admin'],
+    default: 'Employee'
   }
 },{
   timestamps:true
