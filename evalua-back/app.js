@@ -76,7 +76,7 @@ const authRoutes = require('./routes/auth')
 const index = require('./routes/index');
 app.use('/', index);
 //Duda
-app.use('/employees', authRoutes)
+app.use('/auth', authRoutes)
 
 
 module.exports = app;

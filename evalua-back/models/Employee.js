@@ -15,6 +15,10 @@ const employeeSchema = new Schema({
     type:String,
     enum: ['Employee', 'Admin'],
     default: 'Employee'
+  }, 
+  area:{
+    type: String,
+    enum: ['Operations', 'Management']
   }
 },{
   timestamps:true
