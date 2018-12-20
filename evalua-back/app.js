@@ -9,7 +9,7 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 const cors         = require('cors')
-const passport     = require('./helpers/plm')
+const passport     = require('passport')
 const session      = require('express-session')
 const MongoStore   = require('connect-mongo')(session)
 
@@ -75,7 +75,6 @@ app.use(cors({
 const authRoutes = require('./routes/auth')
 const index = require('./routes/index');
 app.use('/', index);
-//Duda
 app.use('/auth', authRoutes)
 
 

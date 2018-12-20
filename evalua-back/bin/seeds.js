@@ -2,7 +2,8 @@ require('dotenv').config();
 
 const mongoose = require('mongoose')
 const User = require('../models/User')
-mongoose.connect('mongodb://admin:admin123@ds139675.mlab.com:39675/perritos')
+// const Survey = require('../models/Survey')
+mongoose.connect(process.env.DB)
 
 //Para dar de alta a mi administrador
 const admins=[
@@ -13,6 +14,17 @@ const admins=[
   }
 ]
 
+// const surveys=[
+//   {
+//     year: 2018,
+//     question1: '',
+//     question2: '',
+//     question3: '',
+//     question4: '',
+//     question5: ''
+//   }
+// ]
+
 User.create(admins)
 .then(admin=>{
   console.log(`${admin.length} adminitrators added`)
@@ -21,3 +33,12 @@ User.create(admins)
 .catch(e=>{
   console.log('Something went wrong' + e)
 })
+
+// Survey.create(surveys)
+// .then(survey=>{
+//   console.log(`${survey.length} surveys added`)
+//   mongoose.connection.close()
+// })
+// .catch(e=>{
+//   console.log('Something went wrong' + e)
+// })
