@@ -1,143 +1,69 @@
 const express = require('express')
 const authRoutes = express.Router()
-const User = require('../models/User')
-const passport = require('passport')
+const Employee = require('../models/Employee')
+const passport = require('../helpers/passport')
 
-const bcrypt     = require('bcryptjs');
-
-//Middleware del admin
-// function checkRole(role){
-//   return function(req, res, next){
-//     if(req.isAuthenticated() && req.user.role === role) return next()
-//     res.status(200).json({user}) 
-//   }
-// }
-// const checkAdmin = checkRole('Admin')
-
-//Signup de perritos
-// router.post('/signup', (req, res, next)=>{
-//   User.register(req.body, req.body.password)
-//     .then(user=>{
-//       res.status(201).json(user)
-//     })
-//     .catch(e=>{
-//       res.status(500).json(e)
-//     })
-// })
-
-//Signup de la learning
-authRoutes.post('/signup', (req, res, next) => {
-  const name = req.body.name;
-  const password = req.body.password;
-
-  if (!name || !password) {
-    res.status(400).json({ message: 'Provide username and password' });
-    return;
+function checkIfLogin(req,res,next){
+  if(req.isAuthenticated()){
+    return next();
   }
+  return res.status(403).json({message:"Please, login in order to watch your profile"});
+}
 
-  if(password.length < 3){
-      res.status(400).json({ message: 'Please make your password at least 8 characters long for security purposes.' });
-      return;
-  }
+//Signup
+authRoutes.post('/signup', (req, res, next)=>{
+  const email = req.body.email
+  Employee.findOne({ email }, "email", (err, user) => {
+    if (user !== null) {
+      res.status(400).json({ message: 'This email account is already taken, choose another one' })
+      return
+    }
+    Employee.register(req.body, req.body.password, (err)=>{
+      if(err) return res.json(err)
+      return res.json({ message: "Account created succesfully, login to see more information"})
+    })
+  })
+})
 
-  User.findOne({ name }, (err, foundUser) => {
+//List of employees
+authRoutes.get('/list', (req,res,next)=>{
+  Employee.find({ role: { $eq: "Employee" } })
+    .then(employees=>{
+      res.json(employees)
+    })
+    .catch(e=>{
+      res.json(e)
+    })
+})
 
-      if(err){
-          res.status(500).json({message: "Username check went bad."});
-          return;
-      }
+//List of admins
+authRoutes.get('/admins', (req,res,next)=>{
+  Employee.find({ role: { $eq: "Admin" } })
+    .then(admins=>{
+      res.json(admins)
+    })
+    .catch(e=>{
+      res.json(e)
+    })
+})
 
-      if (foundUser) {
-          res.status(400).json({ message: 'Username taken. Choose another one.' });
-          return;
-      }
+//Login
+authRoutes.post('/login', 
+  passport.authenticate('local'),
+   (req,res,next)=>{
+    return res.status(200).json({ message: "Welcome, " +req.user.name });
+})
 
-      const salt     = bcrypt.genSaltSync(10);
-      const hashPass = bcrypt.hashSync(password, salt);
-
-      const aNewUser = new User({
-          name:name,
-          password: hashPass
-      });
-
-      aNewUser.save(err => {
-          if (err) {
-              res.status(400).json({ message: 'Saving user to database went wrong.' });
-              return;
-          }
-          
-          // Automatically log in user after sign up
-          // .login() here is actually predefined passport method
-          req.login(aNewUser, (err) => {
-
-              if (err) {
-                  res.status(500).json({ message: 'Login after signup went bad.' });
-                  return;
-              }
-          
-              // Send the user's information to the frontend
-              // We can use also: res.status(200).json(req.user);
-              res.status(200).json(aNewUser);
-          });
-      });
-  });
-});
-
-
-//Login de perritos
-// authRoutes.post('/login', (req, res, next) => {
-//   passport.authenticate('local', (err, user, failure) => {
-//     if (err) return res.status(500).json({err})
-//     if (!user) res.status(404).json({failure})
-//     req.login(user, (e) => {
-//       if (e) return res.status(500).json({e})
-//       res.status(200).json({user}) 
-//     })
-//   })(req, res, next)
-// })
-
-authRoutes.post('/login', (req, res, next) => {
-  passport.authenticate('local', (err, theUser, failureDetails) => {
-      if (err) {
-          res.status(500).json({ message: 'Something went wrong authenticating user' });
-          return;
-      }
-  
-      if (!theUser) {
-          // "failureDetails" contains the error messages
-          // from our logic in "LocalStrategy" { message: '...' }.
-          res.status(401).json(failureDetails);
-          return;
-      }
-
-      // save user in session
-      req.login(theUser, (err) => {
-          if (err) {
-              res.status(500).json({ message: 'Session save went bad.' });
-              return;
-          }
-
-          // We are now logged in (that's why we can also send req.user)
-          res.status(200).json(theUser);
-      });
-  })(req, res, next);
-});
-
+//Logout
 authRoutes.post('/logout', (req, res, next) => {
-  // req.logout() is defined by passport
   req.logout();
-  res.status(200).json({ message: 'Log out success!' });
+  return res.status(200).json({ message: "Log out success, see you later" });
 });
 
-
-authRoutes.get('/loggedin', (req, res, next) => {
-  // req.isAuthenticated() is defined by passport
-  if (req.isAuthenticated()) {
-      res.status(200).json(req.user);
-      return;
-  }
-  res.status(403).json({ message: 'Unauthorized' });
-});
+//Profile
+authRoutes.get('/profile', checkIfLogin, (req, res, next)=>{
+  return res.status(200).json({ message:"Here you have you profile, " + req.user.name })
+})
 
 
 module.exports = authRoutes

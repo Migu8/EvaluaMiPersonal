@@ -1,4 +1,4 @@
-# EvaluaMiPersonal
+# Evalua Mi Personal
 Proyecto final de Ironhack
 
 Evalua mi personal es una app que se adecua a cualquier empresa y tiene como objetivo que todos los empleados puedan

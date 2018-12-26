@@ -9,7 +9,7 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 const cors         = require('cors')
-const passport     = require('passport')
+const plm          = require('./helpers/plm')
 const session      = require('express-session')
 const MongoStore   = require('connect-mongo')(session)
 
@@ -45,8 +45,8 @@ app.use(session({
   cookie:{httpOnly:true, maxAge:60000}
 }))
 
-app.use(passport.initialize())
-app.use(passport.session())
+app.use(plm.initialize())
+app.use(plm.session())
 
 // Express View engine setup
 
@@ -69,13 +69,13 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 app.use(cors({
   credentials:true,
-  origin:['http://localhost:3000']
+  origin:true
 }))
 
 const authRoutes = require('./routes/auth')
 const index = require('./routes/index');
 app.use('/', index);
-app.use('/auth', authRoutes)
+app.use('/api', authRoutes)
 
 
 module.exports = app;

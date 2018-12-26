@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const mongoose = require('mongoose')
-const User = require('../models/User')
+const Employee = require('../models/Employee')
 // const Survey = require('../models/Survey')
 mongoose.connect(process.env.DB)
 
@@ -10,7 +10,9 @@ const admins=[
   {
     name: 'Joshelo',
     email: 'jpedraza@mail.com',
-    role: 'Admin'
+    role: 'Admin',
+    area: 'Management',
+    password:'admin123'
   }
 ]
 
@@ -21,11 +23,12 @@ const admins=[
 //     question2: '',
 //     question3: '',
 //     question4: '',
-//     question5: ''
+//     question5: '',
+//     comment: ''
 //   }
 // ]
 
-User.create(admins)
+Employee.create(admins)
 .then(admin=>{
   console.log(`${admin.length} adminitrators added`)
   mongoose.connection.close()

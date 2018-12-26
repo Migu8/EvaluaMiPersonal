@@ -5,8 +5,8 @@ const router = express.Router()
 //List
 router.get('/employee', (req, res, next)=>{
   Emmployee.find()
-    .then(response=>{
-      res.json(response)
+    .then(allTheEmployees=>{
+      res.json(allTheEmployees)
     })
     .catch(e=>{
       res.json(e)

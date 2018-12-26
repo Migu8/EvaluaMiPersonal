@@ -1,48 +1,46 @@
-import React, { Component } from 'react'
-import AuthService from './AuthService'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
-class Signup extends Component{
-    constructor(props){
-        super(props)
-        this.state = { name:'', email:'', password:''}
-        this.service = new AuthService()
-    }
+const Signup = ({ signup, handleText }) => {
 
-    handleFormSubmit = (e) =>{
-        e.preventDefault()
-        const name = this.state.name
-        const email = this.state.email
-        const password = this.state.password
+    // constructor(props){
+    //     super(props);
+    //     this.state = { name: '', email:'', password: ''};
+    //     this.service = new AuthService();
+    //   }
 
-        this.service.signup(name, email, password)
-        .then( response =>  {
-            this.setState({
-                name:'',
-                email:'',
-                password:''
-            })
-            this.props.getUser(response)
-        })
-        .catch( error=> console.log(error) )
-    }
+    // handleFormSubmit = (event) => {
+    // event.preventDefault();
+    // const name = this.state.name;
+    // const email = this.state.email
+    // const password = this.state.password;
+    
+    // this.service.signup(name, password, email)
+    // .then( response => {
+    //     this.setState({
+    //         username: "",
+    //         email: "",
+    //         password: "",
+    //     });
+    //         this.props.getUser(response)
+    // })
+    // .catch( error => console.log(error) )
+    // }
 
-    handleChange = (e) =>{
-        const {name, value} = e.target
-        this.setState({[name]: value})
-    }
+    // handleChange = (e) =>{
+    //     const {name, value} = e.target
+    //     this.setState({[name]: value})
+    // }
 
-
-    render(){
         return(
             <div>
                 <h1>Hola, aquí está el formulario del Signup</h1>
                 <br />
                 <div>
-                    <form onSubmit={this.handleFormSubmit}>
-                        <input type="text" name='name' value={this.state.name} onChange={ e => this.handleChange(e)} placeholder='Juanito' />
-                        <input type="email" name='email' value={this.state.email} onChange={ e => this.handleChange(e)} placeholder='example@mail.com' />
-                        <input type="password" name='password' value={this.state.password} onChange={ e => this.handleChange(e)} placeholder='Introduce tu contraseña' />
+                    <form method='POST' onSubmit={signup}>
+                        <input type="text" name='name' onChange={handleText} placeholder='Juanito' />
+                        <input type="email" name='email' onChange={handleText} placeholder='example@mail.com' />
+                        <input type="password" name='password' onChange={handleText} placeholder='Introduce tu contraseña' />
                         <input type="submit" value='Signup' />
                     </form>
                 </div>
@@ -52,7 +50,7 @@ class Signup extends Component{
                 <Link to='/'>Home</Link>
             </div>
         )
-    }
+    
 }
 
 export default Signup

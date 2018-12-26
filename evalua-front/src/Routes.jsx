@@ -1,15 +1,15 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
+import AuthPage from './components/auth/AuthPage';
 import LandingPage from './components/home/LandingPage'
-import Signup from './components/auth/Signup'
-import Login from './components/auth/Login'
 
-function Routes (){
+const Routes = () => {
+
     return(
         <Switch>
             <Route exact path='/' component={LandingPage} />
-            <Route path='/signup' component={Signup} />
-            <Route path='/login' component={Login} />
+            <Route exact path='/signup' component={AuthPage} />} />
+            <Route exact path='/login' component={AuthPage} />
         </Switch>
     )
 }
