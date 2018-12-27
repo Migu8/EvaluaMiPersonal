@@ -6,7 +6,7 @@ class LandingPage extends Component {
         return(
             <div style={{
                 textAlign:'center',
-                color:'red'
+                backgroundColor:'#ff7961'
             }}>
                 <h1>Bien-venidos</h1>
                 <br />
