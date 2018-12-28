@@ -22,4 +22,4 @@ const Login = ({ login, handleText })=> {
     
 }
 
-export default Login
+export default Login   

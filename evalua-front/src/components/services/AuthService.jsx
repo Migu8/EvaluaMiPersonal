@@ -16,9 +16,7 @@ export const login = user => {
     .catch(e=>e.response)
 }
 
-
 //logout
-
 
 
 //profile

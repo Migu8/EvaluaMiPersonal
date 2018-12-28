@@ -51,7 +51,7 @@ authRoutes.get('/admins', (req,res,next)=>{
 authRoutes.post('/login', 
   passport.authenticate('local'),
    (req,res,next)=>{
-    return res.status(200).json({ message: "Welcome, " +req.user.name });
+    return res.status(200).json(req.user);
 })
 
 //Logout
