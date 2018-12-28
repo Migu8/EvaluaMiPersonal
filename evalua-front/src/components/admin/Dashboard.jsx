@@ -10,7 +10,7 @@ class Dashboard extends Component {
             }}>
                 <h1>Aquí estará la info del administrador</h1>
                 <br />
-                <h2>El listado de empleados y encuestas, así como el CRUD de ambos</h2>
+                <h2>El listado de empleados y encuestas</h2>
                 <br />
                 <Link to='/'>Home</Link>
             </div>
