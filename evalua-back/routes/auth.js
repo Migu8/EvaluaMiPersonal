@@ -62,7 +62,7 @@ authRoutes.post('/logout', (req, res, next) => {
 
 //Profile
 authRoutes.get('/profile', checkIfLogin, (req, res, next)=>{
-  return res.status(200).json({ message:"Here you have you profile, " + req.user.name })
+  return res.status(200).json(req.user)
 })
 
 
