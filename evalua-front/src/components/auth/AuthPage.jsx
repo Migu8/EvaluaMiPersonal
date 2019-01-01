@@ -29,11 +29,15 @@ class AuthPage extends Component {
     login(user)
       .then(r=>{
         console.log(r)
-        if(r.name){          
-          console.log('You are logged in', r)
-          localStorage.setItem('loggedUser',JSON.stringify(r))
-          this.props.history.push('/home')
-          console.log('Go to profile')         
+        if(r.role){
+          if(r.role === "Admin") this.props.history.push('/dashboard')
+          else{
+            console.log('You are logged in', r.role)
+            localStorage.setItem('loggedUser',JSON.stringify(r))
+            this.props.history.push('/home')
+            console.log('Go to profile')    
+          }       
+     
         }
         else {
           console.log('Something went wrong (login)')

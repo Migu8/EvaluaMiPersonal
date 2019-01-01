@@ -11,4 +11,14 @@ class AddEmployee extends Component {
         const {employee} = this.state
         console.log(employee)
     }
+
+    render(){
+        return(
+            <div>
+                Aquí va el formulario para ingresar nuevos empleados
+            </div>
+        )
+    }
 }
+
+export default AddEmployee
