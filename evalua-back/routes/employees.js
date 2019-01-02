@@ -1,7 +1,6 @@
 const express = require('express')
 const Employee = require('../models/Employee')
 const router = express.Router()
-const passport = require('../helpers/passport')
 
 const isAuth = (req, res, next) => {
   if(req.isAuthenticated()) return next()
@@ -30,9 +29,27 @@ router.get('/employee/:id', (req, res, next)=>{
     })
 })
 
+//List of admins
+router.get('/employee/admin', (req,res,next)=>{
+  Employee.find({ role: { $eq: "Admin" } })
+    .then(admins=>{
+      res.json(admins)
+    })
+    .catch(e=>{
+      res.json(e)
+    })
+})
+
 //Add (only admin)
 router.post('/new', isAuth, (req,res,next)=>{
-
+  const { role } = req.body
+  Employee.create(req.body)
+  .then (employee =>{
+    res.status(201).json(employee)
+  })
+  .catch(e=>{
+    res.status(500).json(e)
+  })
 })
 
 module.exports = router

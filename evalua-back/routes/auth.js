@@ -25,28 +25,6 @@ authRoutes.post('/signup', (req, res, next)=>{
   })
 })
 
-//List of employees
-authRoutes.get('/list', (req,res,next)=>{
-  Employee.find({ role: { $eq: "Employee" } })
-    .then(employees=>{
-      res.json(employees)
-    })
-    .catch(e=>{
-      res.json(e)
-    })
-})
-
-//List of admins
-authRoutes.get('/admins', (req,res,next)=>{
-  Employee.find({ role: { $eq: "Admin" } })
-    .then(admins=>{
-      res.json(admins)
-    })
-    .catch(e=>{
-      res.json(e)
-    })
-})
-
 //Login
 authRoutes.post('/login', 
   passport.authenticate('local'),

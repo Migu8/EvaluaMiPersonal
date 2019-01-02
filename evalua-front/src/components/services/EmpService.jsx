@@ -1,9 +1,18 @@
 import axios from 'axios'
-const host = 'http://localhost:3000/something'
+const host = 'http://localhost:3000/emp'
 
 //list
+export const getEmpData = () => {
+    return axios.get(host + '/employee')
+    .then(res=>{
+        return res.data
+    })
+    .catch(e=>e)
+}
+
+//detail
 export const getEmpData = (id) => {
-    return axios.get(host + '/employee' + id)
+    return axios.get(host + '/employee/' + id)
     .then(res=>{
         return res.data
     })
