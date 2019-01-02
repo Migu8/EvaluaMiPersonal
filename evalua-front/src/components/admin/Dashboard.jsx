@@ -21,15 +21,14 @@ class Dashboard extends Component {
                     </Menu.Menu>
                 </Menu>
                 <div style={{
-                    textAlign:'center',
-                    color:'green'
+                    textAlign:'center'
                 }}>
-                    <h1>Aquí estará la info del administrador</h1>
+                    <h1>Bienvenido, administrador</h1>
                     <br />
-                    <h2>El listado de empleados y encuestas</h2>
+                    <h2>Selecciones abajo la opción que desea consultar</h2>
                     <div>
-                        <Button>Empleados</Button>
-                        <Button>Encuestas</Button>
+                        <Button>Ver empleados</Button>
+                        <Button>Ver encuestas</Button>
                     </div>
                     <br />
                 </div>

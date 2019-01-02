@@ -1,17 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { Button, Form, Grid, Header, Image, Segment } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Image, Segment} from 'semantic-ui-react'
+import Menuuu from '../home/Menu'
 
 const Login = ({ login, handleText })=> {
 
     return(
         <div>
             <div>
-                
+                <Menuuu />    
             </div>
+            <br/>
             <h1 style={{
                 textAlign:'center'
-            }}>Bienvenido a Evalua mi personal</h1>
+            }}>Bienvenido a Evalúa mi personal</h1>
             <br />
             <div className='login-form'>
             <style>{`
@@ -23,8 +24,8 @@ const Login = ({ login, handleText })=> {
             `}</style>
             <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
             <Grid.Column style={{ maxWidth: 450 }}>
-                <Header as='h2' color='teal' textAlign='center'>
-                <Image src='https://res.cloudinary.com/ironhackmigu8/image/upload/v1546404237/evalua-mi-personal/Captura.png' /> Log-in to your account
+                <Header as='h2' textAlign='center'>
+                <Image src='https://res.cloudinary.com/ironhackmigu8/image/upload/v1546404237/evalua-mi-personal/Captura.png' /> Login
                 </Header>
                 <Form size='large' method='POST' onSubmit={login}>
                 <Segment stacked>
@@ -46,7 +47,7 @@ const Login = ({ login, handleText })=> {
                     onChange={handleText}
                     />
 
-                    <Button color='teal' fluid size='large' type='submit'>
+                    <Button fluid size='large' type='submit'>
                     Login
                     </Button>
                 </Segment>
@@ -65,8 +66,6 @@ const Login = ({ login, handleText })=> {
                 <Button type='submit'>Login</Button>
             </Form> */}
             </div>
-            <br />
-            <Button><Link to='/'>Home</Link></Button>
         </div>
     )
     

@@ -1,9 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { Form, Input, TextArea, Button, Container } from 'semantic-ui-react'
+import Menuuu from './Menu';
 
 const ContactUs = () => (
     <div>
+      <div>
+        <Menuuu />
+      </div>
+      <br/>
       <Container>
         <h3>En Evalua mi personal, los problemas de tu empresa son nuestros problemas.
         Déjanos en el formulario de abajo la problemática que vive tu empresa y 
@@ -46,8 +50,6 @@ const ContactUs = () => (
           />
         </Form>
         </Container>
-    <br />
-    <Button><Link to='/'>Home</Link></Button>
     </div>
   
 )

@@ -1,25 +1,13 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import { Button, 
     Container,
     Grid,
     Header,
-    Icon,
     Image,
-    Menu,
     Segment, 
     List
 } from 'semantic-ui-react'
-
-const HomeHeading = () =>(
-    <Container text>
-        <br/>
-        <Button primary size='huge'>
-            Get Started
-            <Icon name='right arrow' />
-        </Button>
-    </Container>
-)
+import Menuuu from './Menu';
 
 const HomepageLayout = () => (
     <div>
@@ -51,7 +39,7 @@ const HomepageLayout = () => (
           </Grid.Row>
           <Grid.Row>
             <Grid.Column textAlign='center'>
-              <Button size='huge'><Link to={'/contact'}>Contáctanos</Link></Button>
+              <Button size='huge'>Aquí podría poner otra cosa</Button>
             </Grid.Column>
           </Grid.Row>
         </Grid>
@@ -111,32 +99,18 @@ const HomepageLayout = () => (
 
 class LandingPage extends Component {
 
-    state = { activeItem: 'home' }
-
-    handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+    state = {}
 
     render() {
-    const { activeItem } = this.state
-    //const { children } = this.props
 
         return(
             <div>
-                <Menu size='large'>
-                    <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
-                    <Menu.Menu position='right'>
-                        <Menu.Item>
-                            <Button><Link to={'/login'}>Login</Link></Button>
-                        </Menu.Item>
-                    </Menu.Menu>
-                </Menu>
+              <Menuuu />
                 <div style={{
                     textAlign:'center'
                 }}>
-                    <h1>Evalua mi personal app</h1>
-                    <br />
-                    <div>
-                    </div>
-                    <HomeHeading />
+                <br/>
+                    <h1>Evalúa mi personal app</h1>
                     <HomepageLayout />
                 </div>
             </div>
