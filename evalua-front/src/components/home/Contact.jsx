@@ -45,6 +45,7 @@ const ContactUs = () => (
           />
           <Form.Field
             id='form-button-control-public'
+            type='submit'
             control={Button}
             content='Confirm'
           />
