@@ -9,9 +9,10 @@ const ContactUs = () => (
       </div>
       <br/>
       <Container>
-        <h3>En Evalua mi personal, los problemas de tu empresa son nuestros problemas.
+        <h3>
         Déjanos en el formulario de abajo la problemática que vive tu empresa y 
-        nosotros nos encargaremos de plantearte una solución.</h3>
+        nosotros nos encargaremos de plantearte la mejor solución.
+        </h3>
         
       </Container>
       <br />
@@ -47,7 +48,7 @@ const ContactUs = () => (
             id='form-button-control-public'
             type='submit'
             control={Button}
-            content='Confirm'
+            content='Send'
           />
         </Form>
         </Container>

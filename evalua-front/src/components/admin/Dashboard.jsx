@@ -1,33 +1,26 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Menu, Button } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
+import MenuAdmin from '../home/MenuAdmin';
 
 class Dashboard extends Component {
 
-    state = { activeItem: 'home' }
+    state = {}
 
-    handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
     render(){
-        const { activeItem } = this.state
         return(
             <div>
-                <Menu size='large'>
-                    <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
-                    <Menu.Menu position='right'>
-                        <Menu.Item>
-                            <Button><Link to={'/'}>Logout</Link></Button>
-                        </Menu.Item>
-                    </Menu.Menu>
-                </Menu>
+                <MenuAdmin />
                 <div style={{
                     textAlign:'center'
                 }}>
+                    <br/>
                     <h1>Bienvenido, administrador</h1>
                     <br />
                     <h2>Selecciones abajo la opción que desea consultar</h2>
                     <div>
-                        <Button>Ver empleados</Button>
+                        <Button><Link to='/employees'>Ver empleados</Link></Button>
                         <Button>Ver encuestas</Button>
                     </div>
                     <br />

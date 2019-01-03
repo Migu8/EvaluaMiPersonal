@@ -1,8 +1,18 @@
-import React from 'react'
+import React, {Component} from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Button } from 'semantic-ui-react'
 
-const AddEmployee = ({ create, handleText }) => {
+const optionsGender = [
+    { key: 'm', text: 'Male', value: 'male' },
+    { key: 'f', text: 'Female', value: 'female' },
+]
+
+const optionsArea = [
+    { key: 'o', text: 'Operations', value: 'operations' },
+    { key: 'm', text: 'Management', value: 'management' },
+]
+
+class AddEmployee extends Component {
 
     state={
         employee:{}
@@ -14,7 +24,8 @@ const AddEmployee = ({ create, handleText }) => {
         console.log(employee)
     }
 
-    render()
+    render(){
+        const { create, handleText } = this.state
         return(
             <div>
                 <h2>Aquí va el formulario para ingresar nuevos empleados</h2>
@@ -24,15 +35,18 @@ const AddEmployee = ({ create, handleText }) => {
                     <input type="text" name='address' onChange={handleText} placeholder='Dirección' />
                     <input type="number" name='age' onChange={handleText} placeholder='35' />
                     <input type="number" name='telephone' onChange={handleText} placeholder='5512345678' />
+                    <input type="text" name='gender' onChange={handleText} placeholder='Female' optionsGender={optionsGender} />
                     <input type="boolean" name='married' onChange={handleText} placeholder='true' />
                     <input type="email" name='email' onChange={handleText} placeholder='example@mail.com' />
                     <input type="text" name='profilePic' onChange={handleText} placeholder='url of the pic' />
-                    <input type="password" name='password' onChange={handleText} placeholder='Introduce tu contraseña' />
-                    <input type="submit" value='Signup' />
+                    <input type="text" name='area' onChange={handleText} placeholder='Management' optionsArea={optionsArea} />
+                    <input type="password" name='password' onChange={handleText} placeholder='Introduce una contraseña' />
+                    <input type="submit" value='Create' />
                 </Form>
                 <Button><Link>Ir al dashboard</Link></Button>
             </div>
         )
+    }
 }
 
 export default AddEmployee

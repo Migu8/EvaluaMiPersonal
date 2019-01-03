@@ -23,7 +23,7 @@ class MenuAdmin extends Component {
                             </Menu.Item>
                         <Menu.Menu position='right'>
                             <Menu.Item disabled>
-                                <Button><Link to={'/login'}>Login</Link></Button>
+                                <Button><Link to={'/logout'}>Logout</Link></Button>
                             </Menu.Item>
                         </Menu.Menu>
                     </Menu>

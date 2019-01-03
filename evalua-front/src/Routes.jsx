@@ -6,6 +6,7 @@ import HomePage from './components/employees/HomePage'
 import ContactUs from './components/home/Contact'
 import Profile from './components/employees/Profile'
 import Dashboard from './components/admin/Dashboard'
+import AddEmployee from './components/admin/AddEmployee'
 import Logout from './components/auth/Logout'
 
 const Routes = () => {
@@ -20,6 +21,7 @@ const Routes = () => {
             <Route path='/contact' component={ContactUs} />
             <Route path='/profile' component={Profile} />
             <Route path='/dashboard' component={Dashboard} />
+            <Route path='/employees' component={AddEmployee} />
         </Switch>
     )
 }
