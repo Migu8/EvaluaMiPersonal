@@ -1,6 +1,16 @@
 const express = require('express')
-const Survey = require('../models/Survey')
 const router = express.Router()
+const Survey = require('../models/Survey')
+
+
+//Create
+router.post('/new', (req, res, next)=>{
+    Survey.create(req.body, (err)=>{
+      if(err) return res.json(err)
+      return res.json({ message: "Survey created succesfully"})
+    })
+})
+
 
 //List
 router.get('/survey', (req, res, next)=>{

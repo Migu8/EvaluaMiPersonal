@@ -68,11 +68,13 @@ app.use(cors({
   origin:true
 }))
 
+const surveys = require('./routes/surveys')
 const employees = require('./routes/employees')
 const authRoutes = require('./routes/auth')
 const index = require('./routes/index');
 app.use('/emp', employees)
 app.use('/', index);
 app.use('/api', authRoutes)
+app.use('/surv', surveys)
 
 module.exports = app;

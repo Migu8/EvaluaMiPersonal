@@ -6,8 +6,9 @@ import HomePage from './components/employees/HomePage'
 import ContactUs from './components/home/Contact'
 import Profile from './components/employees/Profile'
 import Dashboard from './components/admin/Dashboard'
-import AddEmployee from './components/admin/AddEmployee'
+import AddEmployee from './components/admin/Employees'
 import Logout from './components/auth/Logout'
+import Products from './components/home/Products';
 
 const Routes = () => {
 
@@ -17,6 +18,7 @@ const Routes = () => {
             <Route path='/signup' component={AuthPage} />
             <Route path='/login' component={AuthPage} />
             <Route path='/logout' component={Logout} />
+            <Route path='/products' component={Products} />
             <Route path='/home' component={HomePage} />
             <Route path='/contact' component={ContactUs} />
             <Route path='/profile' component={Profile} />

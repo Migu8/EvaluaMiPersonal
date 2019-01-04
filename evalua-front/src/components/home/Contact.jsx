@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Input, TextArea, Button, Container, Advertisement } from 'semantic-ui-react'
+import { Form, Input, TextArea, Button, Container } from 'semantic-ui-react'
 import Menuuu from './Menu';
 
 // const Adver = () => <Advertisement unit='large leaderboard' test='Top' />

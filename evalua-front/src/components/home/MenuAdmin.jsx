@@ -15,8 +15,11 @@ class MenuAdmin extends Component {
                             <Menu.Item name='home'>
                                 <Link to={'/dashboard'}>Dashboard</Link>
                             </Menu.Item>
-                            <Menu.Item name='employee'>
-                                <Link to={'/employee'}>Employees</Link>
+                            <Menu.Item name='profile'>
+                                <Link to={'/profile'}>Profile</Link>
+                            </Menu.Item>
+                            <Menu.Item name='employees'>
+                                <Link to={'/employees'}>Employees</Link>
                             </Menu.Item>
                             <Menu.Item name='survey'>
                                 <Link to={'/survey'}>Surveys</Link>

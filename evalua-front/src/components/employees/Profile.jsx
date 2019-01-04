@@ -1,25 +1,6 @@
 import React, {Component} from 'react'
-import { Button, Card, Icon, Image } from 'semantic-ui-react'
+import { Button, Card, Image } from 'semantic-ui-react'
 import MenuEmployee from '../home/MenuEmployee';
-
-const EmployeeCard = () => (
-    <Card>
-      <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' />
-      <Card.Content>
-        <Card.Header>Matthew</Card.Header>
-        <Card.Meta>
-          <span className='date'>Joined in 2015</span>
-        </Card.Meta>
-        <Card.Description>Matthew is a musician living in Nashville.</Card.Description>
-      </Card.Content>
-      <Card.Content extra>
-        <a>
-          <Icon name='user' />
-          22 Friends
-        </a>
-      </Card.Content>
-    </Card>
-  )
 
 class Profile extends Component{
 
@@ -41,13 +22,32 @@ class Profile extends Component{
 
         const {user} = this.state
         return (
-            <div>
+            <div style={{
+                textAlign:'center'
+            }}>
                 <MenuEmployee />
                 <h1>{user.name}, te quedan 'X' encuestas pendientes por responder</h1>
                 <Button>Responder encuestas</Button>
                 <h2>Tu rol en la empresa es: {user.role}</h2>
                 <div>
-                    <EmployeeCard />
+                <Card style={{
+                    
+                }}>
+                    <Image src={user.profilePic} />
+                    <Card.Content>
+                        <Card.Header>{user.name}</Card.Header>
+                        <Card.Meta>
+                        <span className='date'>{user.age} años</span>
+                        </Card.Meta>
+                        <Card.Description>{user.area}</Card.Description>
+                    </Card.Content>
+                    <Card.Content extra>
+                        {/* <a>
+                        <Icon name='user' />
+                        Encuestas contestadas: 
+                        </a> */}
+                    </Card.Content>
+                </Card>
                 </div>
             </div>
         )

@@ -16,7 +16,7 @@ class Menuuu extends Component {
                                 <Link to={'/'}>Home</Link>
                             </Menu.Item>
                             <Menu.Item name='products'>
-                                <Link to={'/'}>Products</Link>
+                                <Link to={'/products'}>Products</Link>
                             </Menu.Item>
                             <Menu.Item name='contact'>
                                 <Link to={'/contact'}>Contact</Link>
