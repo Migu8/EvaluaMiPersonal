@@ -50,9 +50,12 @@ const HomepageLayout = () => (
         <Grid.Row textAlign='center'>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              "Testimonio 1"
+              Ileana Marín
             </Header>
-            <p style={{ fontSize: '1.33em' }}>Testimonio 1</p>
+            <h4>Jefa de RH, Iberdrola MX</h4>
+            <p style={{ fontSize: '1.33em' }}>Evalúa mi personal nos permitió acercarnos más a 
+            nuestros empleados más jóvenes y hacerlos sentir más cómodos y por ende más productivos y 
+            comprometidos con la empresa</p>
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
             <Header as='h3' style={{ fontSize: '2em' }}>

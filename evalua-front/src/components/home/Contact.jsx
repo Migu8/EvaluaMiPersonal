@@ -1,6 +1,8 @@
 import React from 'react'
-import { Form, Input, TextArea, Button, Container } from 'semantic-ui-react'
+import { Form, Input, TextArea, Button, Container, Advertisement } from 'semantic-ui-react'
 import Menuuu from './Menu';
+
+// const Adver = () => <Advertisement unit='large leaderboard' test='Top' />
 
 const ContactUs = () => (
     <div>
@@ -13,7 +15,6 @@ const ContactUs = () => (
         Déjanos en el formulario de abajo la problemática que vive tu empresa y 
         nosotros nos encargaremos de plantearte la mejor solución.
         </h3>
-        
       </Container>
       <br />
       <Container>
@@ -53,7 +54,6 @@ const ContactUs = () => (
         </Form>
         </Container>
     </div>
-  
 )
 
 export default ContactUs

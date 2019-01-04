@@ -9,10 +9,12 @@ const surveySchema = new Schema({
   question4: String,
   question5: String,
   comment: String,
-  owner:{
-    type: Schema.Types.ObjectId,
-    ref: 'User'
-  }
+  evaluator: String,
+  evaluated: String
+  // owner:{
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'Employee'
+  // }
 },{
   timestamps:true
 })

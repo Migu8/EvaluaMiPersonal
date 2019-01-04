@@ -12,11 +12,8 @@ class MenuEmployee extends Component {
             <div>
                 <Segment inverted>
                     <Menu size='large' inverted secondary>
-                            <Menu.Item name='home'>
-                                <Link to={'/dashboard'}>Dashboard</Link>
-                            </Menu.Item>
-                            <Menu.Item name='employee'>
-                                <Link to={'/employee'}>Employees</Link>
+                            <Menu.Item name='profile'>
+                                <Link to={'/profile'}>Profile</Link>
                             </Menu.Item>
                             <Menu.Item name='survey'>
                                 <Link to={'/survey'}>Surveys</Link>

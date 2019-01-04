@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Login from './Login'
 import Signup from './Signup'
-import { login } from '../services/AuthService'
+import { login, logout } from '../services/AuthService'
 
 class AuthPage extends Component {
   state={
@@ -30,7 +30,10 @@ class AuthPage extends Component {
       .then(r=>{
         console.log(r)
         if(r.role){
-          if(r.role === "Admin") this.props.history.push('/dashboard')
+          if(r.role === "Admin") {
+            localStorage.setItem('loggedUser',JSON.stringify(r))
+            this.props.history.push('/dashboard')
+          }
           else{
             console.log('You are logged in', r.role)
             localStorage.setItem('loggedUser',JSON.stringify(r))
@@ -41,11 +44,23 @@ class AuthPage extends Component {
         }
         else {
           console.log('Something went wrong (login)')
-          this.props.history.push('/')
+          alert('Sus credenciales son inválidas, intente nuevamente')
+          this.props.history.push('/login')
         }
       }).catch(e=>{
         console.log(e)
       })
+  }
+
+  logout = e =>{
+    const {user} = this.state
+    e.preventDefault()
+    logout(e)
+    .then(r=>{
+      localStorage.setItem('loggedUser' === null)
+      this.props.history.push('/')
+      console.log(user)
+    })
   }
 
   handleText = e => {
