@@ -49,7 +49,7 @@ const ContactUs = () => (
             id='form-button-control-public'
             type='submit'
             control={Button}
-            content='Send'
+            content='Enviar'
           />
         </Form>
         </Container>

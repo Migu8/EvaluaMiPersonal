@@ -54,17 +54,6 @@ const Login = ({ login, handleText })=> {
                 </Form>
             </Grid.Column>
             </Grid>
-
-
-            {/* <Form method='POST' onSubmit={login}>
-                <Form.Field>
-                    <input type="email" name='email' onChange={handleText} placeholder='example@mail.com' />
-                </Form.Field>
-                <Form.Field>
-                    <input type="password" name='password' placeholder='password' onChange={handleText} />
-                </Form.Field>
-                <Button type='submit'>Login</Button>
-            </Form> */}
             </div>
         </div>
     )

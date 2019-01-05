@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Button } from 'semantic-ui-react'
 
@@ -12,24 +12,12 @@ const optionsArea = [
     { key: 'm', text: 'Management', value: 'management' },
 ]
 
-class AddEmployee extends Component {
+const AddEmployee = ({ addEmployee, handleText }) => {
 
-    state={
-        employee:{}
-    }
-
-    addEmployee = e =>{
-        e.preventDefault()
-        const {employee} = this.state
-        console.log(employee)
-    }
-
-    render(){
-        const { create, handleText } = this.state
         return(
             <div>
                 <h2>Aquí va el formulario para ingresar nuevos empleados</h2>
-                <Form method='POST' onSubmit={create}>
+                <Form method='POST' onSubmit={addEmployee}>
                     <input type="text" name='name' onChange={handleText} placeholder='Juanito' />
                     <input type="text" name='lastname' onChange={handleText} placeholder='Pérez' />
                     <input type="text" name='address' onChange={handleText} placeholder='Dirección' />
@@ -46,7 +34,7 @@ class AddEmployee extends Component {
                 <Button><Link>Ir al dashboard</Link></Button>
             </div>
         )
-    }
+    
 }
 
 export default AddEmployee

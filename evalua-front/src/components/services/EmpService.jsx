@@ -11,16 +11,16 @@ export const getEmpData = () => {
 }
 
 //detail
-export const getEmpData = (id) => {
-    return axios.get(host + '/employee/' + id)
-    .then(res=>{
-        return res.data
-    })
-    .catch(e=>e)
-}
+// export const getEmpData = (id) => {
+//     return axios.get(host + '/employee/' + id)
+//     .then(res=>{
+//         return res.data
+//     })
+//     .catch(e=>e)
+// }
 
 //add
-export const addEmployee = () =>{
+export const addEmployee = (user) =>{
     return axios.post(host + '/new')
     .then(res =>{
         return res.data
