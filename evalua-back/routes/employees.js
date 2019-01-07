@@ -4,7 +4,7 @@ const router = express.Router()
 
 const isAuth = (req, res, next) => {
   if(req.isAuthenticated()) return next()
-  return res.status(403).json({message:'You cant entry'})
+  return res.status(403).json({message:'You can not entry'})
 }
 
 //List
@@ -14,6 +14,7 @@ router.get('/employee', (req, res, next)=>{
       res.json(allTheEmployees)
     })
     .catch(e=>{
+      console.log('Hola')
       res.json(e)
     })
 })
@@ -41,9 +42,9 @@ router.get('/employee/admin', (req,res,next)=>{
 })
 
 //Add (only admin)
-router.post('/new', isAuth, (req,res,next)=>{
+router.put('/new', isAuth, (req,res,next)=>{
   const { role } = req.body
-  Employee.create(req.body)
+  Employee.register(req.body)
   .then (employee =>{
     res.status(201).json(employee)
   })

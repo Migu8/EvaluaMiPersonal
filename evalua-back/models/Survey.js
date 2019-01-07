@@ -20,3 +20,15 @@ const surveySchema = new Schema({
 })
 
 module.exports = mongoose.model('Survey', surveySchema)
+
+
+//postman
+
+// "year": "2018",
+// 	"question1": "Pregunta 1",
+// 	"question2": "Pregunta 2",
+// 	"question3": "Pregunta 3",
+// 	"question4": "Pregunta 4",
+// 	"question5": "Pregunta 5",
+// 	"evaluator": "Ileana Marín",
+// 	"evaluated": "Miguel López"

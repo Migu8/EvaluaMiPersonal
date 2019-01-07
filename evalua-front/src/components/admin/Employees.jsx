@@ -1,40 +1,52 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Form, Button } from 'semantic-ui-react'
+import React, { Component } from 'react'
+import axios from 'axios'
+import EmpTable from './EmpTable'
+import MenuAdmin from '../home/MenuAdmin'
+const host = 'http://localhost:3000/emp'
 
-const optionsGender = [
-    { key: 'm', text: 'Male', value: 'male' },
-    { key: 'f', text: 'Female', value: 'female' },
-]
+class AllEmployees extends Component {
 
-const optionsArea = [
-    { key: 'o', text: 'Operations', value: 'operations' },
-    { key: 'm', text: 'Management', value: 'management' },
-]
+    constructor(){
+        super()
+        this.state = {employees: [], employeesStatic:[]}
+    }
 
-const AddEmployee = ({ addEmployee, handleText }) => {
+    getAllEmployees = () =>{
+        axios.get(host + '/employee', {withCredentials:true})
+        .then(responseFromApi => {
+            this.setState({
+                employees: responseFromApi.data,
+                employeesStatic: responseFromApi.data
+            })
+        })
+        .catch(e =>{
+            console.log('Los empleados no pueden jalarse de la BD', e)
+        })
+    }
 
+    componentDidMount(){
+        this.getAllEmployees()
+    }
+
+    drawEmployeeTable = () =>{
+        const {employees} = this.state
+        return employees.map((employees, index)=> 
+        <EmpTable key={index} {...employees} />)
+    }
+
+    render(){
+        const {drawEmployeeTable} = this
         return(
             <div>
-                <h2>Aquí va el formulario para ingresar nuevos empleados</h2>
-                <Form method='POST' onSubmit={addEmployee}>
-                    <input type="text" name='name' onChange={handleText} placeholder='Juanito' />
-                    <input type="text" name='lastname' onChange={handleText} placeholder='Pérez' />
-                    <input type="text" name='address' onChange={handleText} placeholder='Dirección' />
-                    <input type="number" name='age' onChange={handleText} placeholder='35' />
-                    <input type="number" name='telephone' onChange={handleText} placeholder='5512345678' />
-                    <input type="text" name='gender' onChange={handleText} placeholder='Female' optionsGender={optionsGender} />
-                    <input type="boolean" name='married' onChange={handleText} placeholder='true' />
-                    <input type="email" name='email' onChange={handleText} placeholder='example@mail.com' />
-                    <input type="text" name='profilePic' onChange={handleText} placeholder='url of the pic' />
-                    <input type="text" name='area' onChange={handleText} placeholder='Management' optionsArea={optionsArea} />
-                    <input type="password" name='password' onChange={handleText} placeholder='Introduce una contraseña' />
-                    <input type="submit" value='Create' />
-                </Form>
-                <Button><Link>Ir al dashboard</Link></Button>
+                <MenuAdmin />
+                <h1>Aquí está la lista de todos los empleados</h1>
+                <div>
+                    <h2>Aquí va la tabla</h2>
+                    {drawEmployeeTable()}
+                </div>
             </div>
         )
-    
+    }
 }
 
-export default AddEmployee
+export default AllEmployees

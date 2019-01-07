@@ -21,7 +21,7 @@ export const getEmpData = () => {
 
 //add
 export const addEmployee = (user) =>{
-    return axios.post(host + '/new')
+    return axios.put(host + '/new')
     .then(res =>{
         return res.data
     })

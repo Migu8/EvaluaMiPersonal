@@ -8,7 +8,8 @@ import Profile from './components/employees/Profile'
 import Dashboard from './components/admin/Dashboard'
 import Logout from './components/auth/Logout'
 import Products from './components/home/Products';
-import AdminPageEmp from './components/admin/AdminPageEmp';
+import Employees from './components/admin/Employees';
+import Surveys from './components/admin/Surveys';
 
 const Routes = () => {
 
@@ -23,7 +24,8 @@ const Routes = () => {
             <Route path='/contact' component={ContactUs} />
             <Route path='/profile' component={Profile} />
             <Route path='/dashboard' component={Dashboard} />
-            <Route path='/employees' component={AdminPageEmp} />
+            <Route path='/employees' component={Employees} />
+            <Route path='/surveys' component={Surveys} />
         </Switch>
     )
 }
