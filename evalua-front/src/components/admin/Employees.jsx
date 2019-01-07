@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import EmpTable from './EmpTable'
 import MenuAdmin from '../home/MenuAdmin'
-const host = 'http://localhost:3000/emp'
+import { Table, Button } from 'semantic-ui-react'
+//const host = 'http://localhost:3000/emp'
 
 class AllEmployees extends Component {
 
@@ -12,7 +14,7 @@ class AllEmployees extends Component {
     }
 
     getAllEmployees = () =>{
-        axios.get(host + '/employee', {withCredentials:true})
+        axios.get(`http://localhost:3000/emp/employee`, {withCredentials:true})
         .then(responseFromApi => {
             this.setState({
                 employees: responseFromApi.data,
@@ -30,8 +32,8 @@ class AllEmployees extends Component {
 
     drawEmployeeTable = () =>{
         const {employees} = this.state
-        return employees.map((employees, index)=> 
-        <EmpTable key={index} {...employees} />)
+        return employees.map((employee, index)=> 
+        <EmpTable key={index} {...employee} />)
     }
 
     render(){
@@ -42,8 +44,19 @@ class AllEmployees extends Component {
                 <h1>Aquí está la lista de todos los empleados</h1>
                 <div>
                     <h2>Aquí va la tabla</h2>
+                    <Table basic='very' celled collapsing>
+                        <Table.Header>
+                        <Table.Row>
+                            <Table.HeaderCell>Empleado</Table.HeaderCell>
+                            <Table.HeaderCell>Encuestas contestadas</Table.HeaderCell>
+                        </Table.Row>
+                        </Table.Header>
+                    </Table>
+                    
                     {drawEmployeeTable()}
                 </div>
+                <br/>
+                <Button size='huge'><Link to='/new'>Agregar empleado</Link></Button>
             </div>
         )
     }

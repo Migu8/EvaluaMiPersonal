@@ -9,6 +9,13 @@ const ContactUs = () => (
       <div>
         <Menuuu />
       </div>
+      <div style={{
+        textAlign:'center',
+        height:'120px',
+        width:'100px',
+        backgroundImage:'https://images.pexels.com/photos/936722/pexels-photo-936722.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+      }}>
+      </div>
       <br/>
       <Container>
         <h3>

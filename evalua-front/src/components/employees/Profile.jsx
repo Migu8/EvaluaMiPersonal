@@ -8,8 +8,6 @@ class Profile extends Component{
         user:{}
     }
 
-    handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
     componentWillMount(){
         const user = JSON.parse(localStorage.getItem('loggedUser'))
         if(!user) this.props.history.push('/login')

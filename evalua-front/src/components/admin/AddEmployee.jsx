@@ -1,40 +1,65 @@
-//Para algunos campos
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { Form, Button, Input, Select } from 'semantic-ui-react'
+import MenuAdmin from '../home/Menu'
 
-// import { Link } from 'react-router-dom'
-// import { Form, Button } from 'semantic-ui-react'
+const optionsGender = [
+    { key: 'm', text: 'Male', value: 'male' },
+    { key: 'f', text: 'Female', value: 'female' },
+]
 
-// const optionsGender = [
-//     { key: 'm', text: 'Male', value: 'male' },
-//     { key: 'f', text: 'Female', value: 'female' },
-// ]
+const married = [
+    { key: 'y', text: 'Yes', value: 'yes' },
+    { key: 'n', text: 'No', value: 'no' },
+]
 
-// const optionsArea = [
-//     { key: 'o', text: 'Operations', value: 'operations' },
-//     { key: 'm', text: 'Management', value: 'management' },
-// ]
+const optionsArea = [
+    { key: 'o', text: 'Operations', value: 'operations' },
+    { key: 'm', text: 'Management', value: 'management' },
+]
 
-//Funciones de Emp Service
-//{ addEmployee, handleText }
+const AddEmployee = ({ addEmployee, handleText }) =>{
 
-
-
-
-
-//El formulario
-
-{/* <h2>Aquí va el formulario para ingresar nuevos empleados</h2>
+    return(
+        <div>
+            <MenuAdmin />
+            <div style={{
+            paddingTop:'5%',
+            paddingLeft:'10%'
+        }}>
+            <h2>Agrega un nuevo empleado</h2>
                 <Form method='POST' onSubmit={addEmployee}>
-                    <input type="text" name='name' onChange={handleText} placeholder='Juanito' />
-                    <input type="text" name='lastname' onChange={handleText} placeholder='Pérez' />
-                    <input type="text" name='address' onChange={handleText} placeholder='Dirección' />
-                    <input type="number" name='age' onChange={handleText} placeholder='35' />
-                    <input type="number" name='telephone' onChange={handleText} placeholder='5512345678' />
-                    <input type="text" name='gender' onChange={handleText} placeholder='Female' optionsGender={optionsGender} />
-                    <input type="boolean" name='married' onChange={handleText} placeholder='true' />
-                    <input type="email" name='email' onChange={handleText} placeholder='example@mail.com' />
-                    <input type="text" name='profilePic' onChange={handleText} placeholder='url of the pic' />
-                    <input type="text" name='area' onChange={handleText} placeholder='Management' optionsArea={optionsArea} />
-                    <input type="password" name='password' onChange={handleText} placeholder='Introduce una contraseña' />
-                    <input type="submit" value='Create' />
-                </Form>
-                <Button><Link>Ir al dashboard</Link></Button> */}
+                <Form.Group>
+                    <Form.Field control={Input} type="text" label='Nombre' name='name' onChange={handleText} placeholder='Juanito' />
+                    <Form.Field control={Input} type="text" label='Apellido' name='lastname' onChange={handleText} placeholder='Pérez' />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Field control={Input} type="text" label='Dirección completa' name='address' onChange={handleText} placeholder='Dirección' />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Field control={Input} type="number" label='Edad' name='age' onChange={handleText} placeholder='35' />
+                    <Form.Field control={Input} type="number" label='Teléfono' name='telephone' onChange={handleText} placeholder='5512345678' />
+                    <Form.Field control={Select} type="text" label='Género' name='gender' options={optionsGender} onChange={handleText} placeholder='Female' />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Field control={Select} type="text" label='Estado civil' name='married' options={married} onChange={handleText} placeholder='true' />
+                    <Form.Field control={Input} type="email" label='Email' name='email' options={optionsArea} onChange={handleText} placeholder='example@mail.com' />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Field control={Input} type="text" label='Foto' name='profilePic' onChange={handleText} placeholder='url of the pic' />
+                    <Form.Field control={Select} type="text" label='Área' name='area' onChange={handleText} placeholder='Management' />
+                    <Form.Field control={Input} type="password" label='Contraseña' name='password' onChange={handleText} placeholder='Introduce una contraseña' />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Field control={Button} type="submit" value='Create' />
+                </Form.Group>
+            </Form>
+            <Button><Link to='/dashboard'>Ir al dashboard</Link></Button>
+            </div>
+            
+        </div>
+    )
+}
+
+export default AddEmployee
+                

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, 
+import { 
     Container,
     Grid,
     Header,
@@ -11,7 +11,7 @@ import Menuuu from './Menu';
 
 const HomepageLayout = () => (
     <div>
-      <Segment style={{ padding: '8em 0em' }} vertical>
+      <Segment style={{ padding: '4em 0em' }} vertical>
         <Grid container stackable verticalAlign='middle'>
           <Grid.Row>
             <Grid.Column width={8}>
@@ -37,31 +37,28 @@ const HomepageLayout = () => (
               <Image bordered rounded size='large' src='https://images.pexels.com/photos/943630/pexels-photo-943630.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' />
             </Grid.Column>
           </Grid.Row>
-          <Grid.Row>
-            <Grid.Column textAlign='center'>
-              <Button size='huge'>Aquí podría poner otra cosa</Button>
-            </Grid.Column>
-          </Grid.Row>
         </Grid>
       </Segment>
-
+      <h2>Nuestros clientes nos recomiendan</h2>
       <Segment style={{ padding: '0em' }} vertical>
       <Grid celled='internally' columns='equal' stackable>
         <Grid.Row textAlign='center'>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              Ileana Marín
+              Cristian Torres
             </Header>
-            <h4>Jefa de RH, Iberdrola MX</h4>
+            <h4>Jefe de RH, Cuarta Mano MX</h4>
             <p style={{ fontSize: '1.33em' }}>Evalúa mi personal nos permitió acercarnos más a 
             nuestros empleados más jóvenes y hacerlos sentir más cómodos y por ende más productivos y 
             comprometidos con la empresa</p>
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-              "Testimonio 2"
+              Laura Cárdenas
             </Header>
-            <p style={{ fontSize: '1.33em' }}>Testimonio 2</p>
+            <h4>Director de RH, Mercado Negro MX</h4>
+            <p style={{ fontSize: '1.33em' }}>Desde hace 4 años que integramos las evaluaciones
+            semestrales de 'Evalúa mi personal' la rotación de nuestro personal disminuyó en un 45%</p>
           </Grid.Column>
         </Grid.Row>
       </Grid>
@@ -75,23 +72,22 @@ const HomepageLayout = () => (
               <Header inverted as='h4' content='Acerca de nosotros' />
               <List link inverted>
                 <List.Item as='a'>Nuestros valores</List.Item>
-                <List.Item as='a'>Nuestro personal</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={3}>
               <Header inverted as='h4' content='Servicios' />
               <List link inverted>
-                <List.Item as='a'>Encuestas</List.Item>
-                <List.Item as='a'>Evaluación del desempeño</List.Item>
+                <List.Item as='a'>Encuestas de evaluación</List.Item>
+                <List.Item as='a'>Capacitación de personal</List.Item>
               </List>
             </Grid.Column>
-            <Grid.Column width={7}>
-              <Header as='h4' inverted>
+            <Grid.Column width={3}>
+              {/* <Header as='h4' inverted>
                 Algo debe ir aquí
-              </Header>
-              <p>
-                Aún no sé qué
-              </p>
+              </Header> */}
+              <List link inverted>
+                <List.Item as='a'>Aviso de privacidad</List.Item>
+              </List>
             </Grid.Column>
           </Grid.Row>
         </Grid>

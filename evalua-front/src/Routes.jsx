@@ -7,9 +7,11 @@ import ContactUs from './components/home/Contact'
 import Profile from './components/employees/Profile'
 import Dashboard from './components/admin/Dashboard'
 import Logout from './components/auth/Logout'
-import Products from './components/home/Products';
-import Employees from './components/admin/Employees';
-import Surveys from './components/admin/Surveys';
+import Products from './components/home/Products'
+import Employees from './components/admin/Employees'
+import EmpDetail from './components/admin/EmpDetail'
+import AddEmployee from './components/admin/AddEmployee'
+import Surveys from './components/admin/Surveys'
 
 const Routes = () => {
 
@@ -25,7 +27,9 @@ const Routes = () => {
             <Route path='/profile' component={Profile} />
             <Route path='/dashboard' component={Dashboard} />
             <Route path='/employees' component={Employees} />
+            <Route path='/employees/:id' component={EmpDetail} />
             <Route path='/surveys' component={Surveys} />
+            <Route path='/new' component={AddEmployee} />
         </Switch>
     )
 }

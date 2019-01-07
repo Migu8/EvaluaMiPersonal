@@ -3,14 +3,16 @@ import MenuEmployee from '../home/MenuEmployee';
 
 class Home extends Component {
 
-    state = {}
-
+    state = {
+        user:{}
+    }
 
     render() {
 
     return(
         <div style={{
-            textAlign:'center'
+            textAlign:'center',
+            paddingTop:'12%'
         }}>
             <MenuEmployee />
             <h1>Bienvenido a la Home Page</h1>

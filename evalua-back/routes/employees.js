@@ -1,6 +1,6 @@
 const express = require('express')
+const employees = express.Router()
 const Employee = require('../models/Employee')
-const router = express.Router()
 
 const isAuth = (req, res, next) => {
   if(req.isAuthenticated()) return next()
@@ -8,30 +8,31 @@ const isAuth = (req, res, next) => {
 }
 
 //List
-router.get('/employee', (req, res, next)=>{
-  Emmployee.find()
-    .then(allTheEmployees=>{
-      res.json(allTheEmployees)
+employees.get('/employee', (req, res, next)=>{
+  Employee.find()
+    .then(response=>{
+      res.json(response)
     })
     .catch(e=>{
-      console.log('Hola')
+      console.log('Hola, error en la lista')
       res.json(e)
     })
 })
 
 //Detail
-router.get('/employee/:id', (req, res, next)=>{
+employees.get('/employee/:id', (req, res, next)=>{
   Employee.findById(req.params.id)
     .then(response=>{
       res.json(response)
     })
     .catch(e=>{
+      console.log('Hola, error en el detalle')
       res.json(e)
     })
 })
 
 //List of admins
-router.get('/employee/admin', (req,res,next)=>{
+employees.get('/employee/admin', (req,res,next)=>{
   Employee.find({ role: { $eq: "Admin" } })
     .then(admins=>{
       res.json(admins)
@@ -42,7 +43,7 @@ router.get('/employee/admin', (req,res,next)=>{
 })
 
 //Add (only admin)
-router.put('/new', isAuth, (req,res,next)=>{
+employees.put('/new', isAuth, (req,res,next)=>{
   const { role } = req.body
   Employee.register(req.body)
   .then (employee =>{
@@ -53,4 +54,4 @@ router.put('/new', isAuth, (req,res,next)=>{
   })
 })
 
-module.exports = router
+module.exports = employees
