@@ -33,7 +33,7 @@ class Dashboard extends Component {
                     <h2>Selecciones abajo la opción que desea consultar</h2>
                     <div>
                         <Button><Link to='/employees'>Ver empleados</Link></Button>
-                        <Button>Ver encuestas</Button>
+                        <Button><Link to='/survey'>Ver encuestas</Link></Button>
                     </div>
                     <br />
                 </div>

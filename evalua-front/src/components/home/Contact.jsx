@@ -18,10 +18,12 @@ const ContactUs = () => (
       </div>
       <br/>
       <Container>
-        <h3>
+        <h2 style={{
+          paddingBottom:'6%'
+        }}>
         Déjanos en el formulario de abajo la problemática que vive tu empresa y 
         nosotros nos encargaremos de plantearte la mejor solución.
-        </h3>
+        </h2>
       </Container>
       <br />
       <Container>

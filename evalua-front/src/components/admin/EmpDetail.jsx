@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import MenuAdmin from '../home/MenuAdmin';
 
 class EmpDetail extends Component{
     constructor(props){
@@ -29,6 +30,7 @@ class EmpDetail extends Component{
 
         return(
             <div>
+                <MenuAdmin />
                 <h1>Employee detail</h1>
                 <img src={this.state.image} alt='Fotuki del empleado' />
                 <h3>Área: {this.state.area}</h3>

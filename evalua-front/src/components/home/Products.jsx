@@ -40,7 +40,9 @@ const Products = () => (
         </div>
         <br/>
         <Container>
-            <h3>
+            <h3 style={{
+              padding:'5%'
+            }}>
             Estos son los productos que ofrecemos para darle solución a la problemática que presente tu empresa.
             Tenemos más de 15 años apoyando a distintas empresas de distintos giros.
             </h3>
@@ -50,7 +52,9 @@ const Products = () => (
         </Container>
         <br />
         <Container>
-            <h4>Estos son algunos de nuestros clientes.</h4>
+            <h4 style={{
+              padding:'5%'
+            }}>Estos son algunos de nuestros clientes.</h4>
             <div>
                 <PartnersLogos />
             </div>

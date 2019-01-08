@@ -56,7 +56,7 @@ class AllEmployees extends Component {
                     {drawEmployeeTable()}
                 </div>
                 <br/>
-                <Button size='huge'><Link to='/new'>Agregar empleado</Link></Button>
+                <Button size='huge'><Link to='/signup'>Agregar empleado</Link></Button>
             </div>
         )
     }

@@ -9,7 +9,7 @@ const employeeSchema = new Schema({
   age: Number,
   telephone:Number,
   gender: String,
-  married: Boolean,
+  married: String,
   email: String,
   profilePic: String,
   role:{

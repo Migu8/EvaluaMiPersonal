@@ -1,3 +1,5 @@
+//NO SIRVE
+
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Button, Input, Select } from 'semantic-ui-react'
@@ -43,11 +45,11 @@ const AddEmployee = ({ addEmployee, handleText }) =>{
                 </Form.Group>
                 <Form.Group>
                     <Form.Field control={Select} type="text" label='Estado civil' name='married' options={married} onChange={handleText} placeholder='true' />
-                    <Form.Field control={Input} type="email" label='Email' name='email' options={optionsArea} onChange={handleText} placeholder='example@mail.com' />
+                    <Form.Field control={Input} type="email" label='Email' name='email' onChange={handleText} placeholder='example@mail.com' />
                 </Form.Group>
                 <Form.Group>
                     <Form.Field control={Input} type="text" label='Foto' name='profilePic' onChange={handleText} placeholder='url of the pic' />
-                    <Form.Field control={Select} type="text" label='Área' name='area' onChange={handleText} placeholder='Management' />
+                    <Form.Field control={Select} type="text" label='Área' name='area' options={optionsArea} onChange={handleText} placeholder='Management' />
                     <Form.Field control={Input} type="password" label='Contraseña' name='password' onChange={handleText} placeholder='Introduce una contraseña' />
                 </Form.Group>
                 <Form.Group>

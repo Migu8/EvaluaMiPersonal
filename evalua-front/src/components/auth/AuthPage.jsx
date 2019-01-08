@@ -1,27 +1,27 @@
 import React, { Component } from 'react'
 import Login from './Login'
 import Signup from './Signup'
-import { login, logout } from '../services/AuthService'
+import { login, signup, logout } from '../services/AuthService'
 
 class AuthPage extends Component {
   state={
     user:{}
   }
 
-  //La app no necesitará signup porque el admin los dará de alta
-  // signup = e => {
-  //   const {user} = this.state
-  //   e.preventDefault()
-  //   signup(user)
-  //     .then(r=>{
-  //       console.log(r)
-  //       this.props.history.push('/login')
-  //       console.log('User created correctly')
-  //     }).catch(e=>{
-  //       console.log('Something went wrong (signup)')
-  //       console.log(e)
-  //     })
-  // }
+  //Los usuarios son agregados por el admin utilizando la funccionalidad del Signup
+  signup = e => {
+    const {user} = this.state
+    e.preventDefault()
+    signup(user)
+      .then(r=>{
+        console.log(r)
+        this.props.history.push('/dashboard')
+        console.log('User created correctly')
+      }).catch(e=>{
+        console.log('Something went wrong (signup)')
+        console.log(e)
+      })
+  }
 
   login = e => {
     const {user} = this.state

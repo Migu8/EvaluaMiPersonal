@@ -17,7 +17,7 @@ const EmpTable = ({_id, name, image, area}) => (
             </Header.Content>
           </Header>
         </Table.Cell>
-        <Table.Cell>22</Table.Cell>
+        <Table.Cell># de encuestas</Table.Cell>
       </Table.Row>
     </Table.Body>
   </Table>

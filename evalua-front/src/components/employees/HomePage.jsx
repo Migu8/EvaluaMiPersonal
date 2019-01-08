@@ -10,12 +10,13 @@ class Home extends Component {
     render() {
 
     return(
-        <div style={{
+        <div>
+            <MenuEmployee />
+            <h1 style={{
             textAlign:'center',
             paddingTop:'12%'
         }}>
-            <MenuEmployee />
-            <h1>Bienvenido a la Home Page</h1>
+        Bienvenido a la Home Page</h1>
             {/* Aquí viene la información del usuario loggeado */}
         </div>
         )
