@@ -46,7 +46,7 @@ const Signup = ({ signup, handleText }) => {
                     <Form.Field control={Input} type="email" label='Email' name='email' onChange={handleText} placeholder='example@mail.com' />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Field control={Input} type="text" label='Foto' name='profilePic' onChange={handleText} placeholder='url of the pic' />
+                    <Form.Field control={Input} type="file" label='Foto' name='profilePic' onChange={handleText} placeholder='url of the pic' />
                     <Form.Field control={Select} type="text" label='Área' name='area' options={optionsArea} onChange={handleText} placeholder='Management' />
                     <Form.Field control={Input} type="password" label='Contraseña' name='password' onChange={handleText} placeholder='Introduce una contraseña' />
                 </Form.Group>

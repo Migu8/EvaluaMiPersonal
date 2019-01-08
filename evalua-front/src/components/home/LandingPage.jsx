@@ -19,10 +19,7 @@ const HomepageLayout = () => (
                 ¿Qué hacemos?
               </Header>
               <p style={{ fontSize: '1.33em' }}>
-                Nuestra app le permitirá a tu organización medir el grado de 
-                satisfacción de tus empleados en su entorno, arrojando así datos
-                que te encaminarán hacia mejores decisiones que aumenten su 
-                productividad.
+                Reducimos la rotación de tu personal hasta en un 80%.
               </p>
               <br />
               <Header as='h3' style={{ fontSize: '2em' }}>
@@ -30,7 +27,7 @@ const HomepageLayout = () => (
               </Header>
               <p style={{ fontSize: '1.33em' }}>
                 Pequeñas encuestas anuales o semestrales te mostrarán datos duros
-                para poder mejorar en tus áreas de oportunidad.
+                para poder retener talento joven.
               </p>
             </Grid.Column>
             <Grid.Column floated='right' width={7}>
@@ -44,20 +41,28 @@ const HomepageLayout = () => (
       <Grid celled='internally' columns='equal' stackable>
         <Grid.Row textAlign='center'>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
+            <Image size='medium' circular centered src="https://images.pexels.com/photos/1138903/pexels-photo-1138903.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="gerente"/>
+            <Header as='h3' style={{ fontSize: '1.5em' }}>
               Cristian Torres
             </Header>
             <h4>Jefe de RH, Cuarta Mano MX</h4>
-            <p style={{ fontSize: '1.33em' }}>Evalúa mi personal nos permitió acercarnos más a 
+            <p style={{ 
+              fontSize: '1em',
+              paddingLeft:'10%',
+              paddingRight:'10%' }}>Evalúa mi personal nos permitió acercarnos más a 
             nuestros empleados más jóvenes y hacerlos sentir más cómodos y por ende más productivos y 
             comprometidos con la empresa</p>
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
+          <Image size='medium' circular centered src="https://images.pexels.com/photos/325924/pexels-photo-325924.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="gerente"/>
+          
+            <Header as='h3' style={{ fontSize: '1.5em' }}>
               Laura Cárdenas
             </Header>
             <h4>Director de RH, Mercado Negro MX</h4>
-            <p style={{ fontSize: '1.33em' }}>Desde hace 4 años que integramos las evaluaciones
+            <p style={{ fontSize: '1em',
+              paddingLeft:'10%',
+              paddingRight:'10%' }}>Desde hace 4 años que integramos las evaluaciones
             semestrales de 'Evalúa mi personal' la rotación de nuestro personal disminuyó en un 45%</p>
           </Grid.Column>
         </Grid.Row>
@@ -109,7 +114,7 @@ class LandingPage extends Component {
                     textAlign:'center'
                 }}>
                 <br/>
-                    <h1>Evalúa mi personal app</h1>
+                    <h1 style={{ fontSize: '3.5em' }}>Evaluapp</h1>
                     <HomepageLayout />
                 </div>
             </div>

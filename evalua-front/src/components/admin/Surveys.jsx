@@ -14,6 +14,7 @@ class Surveys extends Component {
     allSurveys = () =>{
         axios.get(host + '/survey', {withCredentials:true})
         .then(responseFromApi => {
+            console.log(responseFromApi)
             this.setState({
                 surveys: responseFromApi.data,
                 surveysStatic: responseFromApi.data
@@ -30,7 +31,7 @@ class Surveys extends Component {
 
     drawSurveyList = () =>{
         const {surveys} = this.state
-        return surveys.map((survey, index)=> 
+        return surveys.map((survey, index)=>
         <SurveyList key={index} {...survey} />)
     }
 

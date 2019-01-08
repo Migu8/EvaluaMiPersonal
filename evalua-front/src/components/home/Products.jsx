@@ -13,7 +13,7 @@ const products = [
     }
   ]
   
-const ProductsItems = () => <Card.Group items={products} />
+const ProductsItems = () => <Card.Group centered items={products} />
 
 const PartnersLogos = () => (
     <Grid verticalAlign='middle' columns={4} centered>
@@ -41,7 +41,8 @@ const Products = () => (
         <br/>
         <Container>
             <h3 style={{
-              padding:'5%'
+              padding:'5%',
+              fontSize:'2em'
             }}>
             Estos son los productos que ofrecemos para darle solución a la problemática que presente tu empresa.
             Tenemos más de 15 años apoyando a distintas empresas de distintos giros.
@@ -53,7 +54,8 @@ const Products = () => (
         <br />
         <Container>
             <h4 style={{
-              padding:'5%'
+              padding:'5%',
+              fontSize:'2em'
             }}>Estos son algunos de nuestros clientes.</h4>
             <div>
                 <PartnersLogos />

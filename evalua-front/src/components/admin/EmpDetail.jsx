@@ -32,7 +32,7 @@ class EmpDetail extends Component{
             <div>
                 <MenuAdmin />
                 <h1>Employee detail</h1>
-                <img src={this.state.image} alt='Fotuki del empleado' />
+                <img src={this.state.profilePic} alt='Fotuki del empleado' />
                 <h3>Área: {this.state.area}</h3>
                 <h4>El empleado ha contestado: X</h4>
             </div>
