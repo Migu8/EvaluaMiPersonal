@@ -12,7 +12,7 @@ const Login = ({ login, handleText })=> {
             <br/>
             <h1 style={{
                 textAlign:'center'
-            }}>Bienvenido a Evalúa mi personal</h1>
+            }}>Bienvenido a Evaluapp</h1>
             <br />
             <div className='login-form'>
             <style>{`
@@ -25,7 +25,7 @@ const Login = ({ login, handleText })=> {
             <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
             <Grid.Column style={{ maxWidth: 450 }}>
                 <Header as='h2' textAlign='center'>
-                <Image src='https://res.cloudinary.com/ironhackmigu8/image/upload/v1546404237/evalua-mi-personal/Captura.png' /> Login
+                <Image src='https://res.cloudinary.com/ironhackmigu8/image/upload/v1546404237/evalua-mi-personal/Captura.png' /> Entrar
                 </Header>
                 <Form size='large' method='POST' onSubmit={login}>
                 <Segment stacked>

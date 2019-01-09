@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Link } from 'react-router-dom'
 import { Button, Card, Image } from 'semantic-ui-react'
 import MenuEmployee from '../home/MenuEmployee';
 
@@ -24,11 +25,11 @@ class Profile extends Component{
                 textAlign:'center'
             }}>
                 <MenuEmployee />
-                <h1>{user.name}, te quedan 'X' encuestas pendientes por responder</h1>
-                <Button>Responder encuestas</Button>
+                <h1>{user.name}, te quedan 3 encuestas pendientes por responder</h1>
+                <Button><Link to='survey'>Responder encuestas</Link></Button>
                 <h2>Tu rol en la empresa es: {user.role}</h2>
                 <div>
-                <Card style={{
+                <Card centered style={{
                     
                 }}>
                     <Image src={user.profilePic} />

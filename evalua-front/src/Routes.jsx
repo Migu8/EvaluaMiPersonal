@@ -10,7 +10,6 @@ import Logout from './components/auth/Logout'
 import Products from './components/home/Products'
 import Employees from './components/admin/Employees'
 import EmpDetail from './components/admin/EmpDetail'
-import AddEmployee from './components/admin/AddEmployee'
 import Surveys from './components/admin/Surveys'
 import SurveysList from './components/employees/SurveysList';
 
@@ -31,7 +30,6 @@ const Routes = () => {
             <Route path='/employees/:id' component={EmpDetail} />
             <Route path='/survey' component={Surveys} />
             <Route path='/survey' component={SurveysList} />
-            <Route path='/new' component={AddEmployee} />
         </Switch>
     )
 }

@@ -5,11 +5,11 @@ import Menuuu from './Menu';
 const products = [
     {
       header: 'Encuestas',
-      description: 'Leverage agile frameworks to provide a robust synopsis for high level overviews.',
+      description: 'A través de ellas te obtendrás la información necesaria para hacer sentir a tus empleados lo más cómodos posible y por ende la productividad aumentará',
     },
     {
       header: 'Capacitación',
-      description: 'Bring to the table win-win survival strategies to ensure proactive domination.',
+      description: 'Una vez ubicados los posibles problemas que enfrentan tus equipos o áreas, nosotros nos encargaremos de resolver esas diferencias entre tus empleados',
     }
   ]
   
@@ -40,23 +40,22 @@ const Products = () => (
         </div>
         <br/>
         <Container>
-            <h3 style={{
+            <h2 style={{
               padding:'5%',
-              fontSize:'2em'
+              textAlign:'center'
             }}>
-            Estos son los productos que ofrecemos para darle solución a la problemática que presente tu empresa.
-            Tenemos más de 15 años apoyando a distintas empresas de distintos giros.
-            </h3>
+            Estos son los productos que ofrecemos desde hace más de 10 años:
+            </h2>
             <div>
                 <ProductsItems />
             </div>
         </Container>
         <br />
         <Container>
-            <h4 style={{
+            <h2 style={{
               padding:'5%',
-              fontSize:'2em'
-            }}>Estos son algunos de nuestros clientes.</h4>
+              textAlign:'center'
+            }}>Estos son algunos de nuestros clientes:</h2>
             <div>
                 <PartnersLogos />
             </div>

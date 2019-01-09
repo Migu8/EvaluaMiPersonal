@@ -49,7 +49,7 @@ const HomepageLayout = () => (
             <p style={{ 
               fontSize: '1em',
               paddingLeft:'10%',
-              paddingRight:'10%' }}>Evalúa mi personal nos permitió acercarnos más a 
+              paddingRight:'10%' }}>Evaluapp nos permitió acercarnos más a 
             nuestros empleados más jóvenes y hacerlos sentir más cómodos y por ende más productivos y 
             comprometidos con la empresa</p>
           </Grid.Column>
@@ -59,11 +59,11 @@ const HomepageLayout = () => (
             <Header as='h3' style={{ fontSize: '1.5em' }}>
               Laura Cárdenas
             </Header>
-            <h4>Director de RH, Mercado Negro MX</h4>
+            <h4>Directora de RH, Mercado Negro MX</h4>
             <p style={{ fontSize: '1em',
               paddingLeft:'10%',
               paddingRight:'10%' }}>Desde hace 4 años que integramos las evaluaciones
-            semestrales de 'Evalúa mi personal' la rotación de nuestro personal disminuyó en un 45%</p>
+            semestrales de Evaluapp la rotación de nuestro personal disminuyó en un 45%</p>
           </Grid.Column>
         </Grid.Row>
       </Grid>
@@ -80,7 +80,7 @@ const HomepageLayout = () => (
               </List>
             </Grid.Column>
             <Grid.Column width={3}>
-              <Header inverted as='h4' content='Servicios' />
+              <Header inverted as='h4' content='Productos' />
               <List link inverted>
                 <List.Item as='a'>Encuestas de evaluación</List.Item>
                 <List.Item as='a'>Capacitación de personal</List.Item>
@@ -90,6 +90,8 @@ const HomepageLayout = () => (
               {/* <Header as='h4' inverted>
                 Algo debe ir aquí
               </Header> */}
+              <Header inverted as='h4' content='' />
+              <br/>
               <List link inverted>
                 <List.Item as='a'>Aviso de privacidad</List.Item>
               </List>

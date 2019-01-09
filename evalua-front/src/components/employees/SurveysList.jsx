@@ -10,12 +10,14 @@ class SurveysEmp extends Component {
 
     constructor(){
         super()
-        this.state = {surveys: [], surveysStatic:[]}
+        this.state = {surveys: [], surveysStatic:[], user:{}}
     }
 
     getMySurveys = () =>{
+        console.log(this.state.user)
         axios.get(`http://localhost:3000/surv/survey`, {withCredentials:true})
         .then(responseFromApi => {
+            console.log(responseFromApi)
             this.setState({
                 surveys: responseFromApi.data,
                 surveysStatic: responseFromApi.data
@@ -26,14 +28,24 @@ class SurveysEmp extends Component {
         })
     }
 
-    componentDidMount(){
+    onSetResult = (result, key) => {
+        localStorage.setItem(key, JSON.stringify(result));
+        this.setState({ user: result });
+      }
+
+    
+    componentWillMount(){
+        this.onSetResult()
         this.getMySurveys()
     }
 
     drawSurveyList = () =>{
-        const {surveys} = this.state
-        return surveys.map((survey, index)=> 
+
+        const {surveys, user} = this.state
+        console.log(surveys)
+        console.log(user)
         //Aquí viene la condición para que sólo dibuje en las que participa como evaluador
+        return surveys.map((survey, index)=> 
         <SurveysByEmployee key={index} {...survey} />)
     }
 

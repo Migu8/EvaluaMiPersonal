@@ -39,11 +39,12 @@ class AllEmployees extends Component {
     render(){
         const {drawEmployeeTable} = this
         return(
-            <div>
+            <div style={{
+                textAlign:'center'
+            }}>
                 <MenuAdmin />
-                <h1>Aquí está la lista de todos los empleados</h1>
+                <h2>A continuación se muestran los empleados y el su status de encuestas contestadas</h2>
                 <div>
-                    <h2>Aquí va la tabla</h2>
                     <Table basic='very' celled collapsing>
                         <Table.Header>
                         <Table.Row>

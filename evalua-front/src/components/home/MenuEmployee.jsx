@@ -13,14 +13,14 @@ class MenuEmployee extends Component {
                 <Segment inverted>
                     <Menu size='large' inverted secondary>
                             <Menu.Item name='profile'>
-                                <Link to={'/profile'}>Profile</Link>
+                                <Link to={'/profile'}>Perfil</Link>
                             </Menu.Item>
                             <Menu.Item name='survey'>
-                                <Link to={'/survey'}>Surveys</Link>
+                                <Link to={'/survey'}>Encuestas</Link>
                             </Menu.Item>
                         <Menu.Menu position='right'>
                             <Menu.Item disabled>
-                                <Button><Link to={'/logout'}>Logout</Link></Button>
+                                <Button><Link to={'/logout'}>Salir</Link></Button>
                             </Menu.Item>
                         </Menu.Menu>
                     </Menu>

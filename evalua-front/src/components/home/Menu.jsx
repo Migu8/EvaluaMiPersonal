@@ -13,17 +13,17 @@ class Menuuu extends Component {
                 <Segment inverted>
                     <Menu size='large' inverted secondary>
                             <Menu.Item name='home'>
-                                <Link to={'/'}>Home</Link>
+                                <Link to={'/'}>Inicio</Link>
                             </Menu.Item>
                             <Menu.Item name='products'>
-                                <Link to={'/products'}>Products</Link>
+                                <Link to={'/products'}>Productos</Link>
                             </Menu.Item>
                             <Menu.Item name='contact'>
-                                <Link to={'/contact'}>Contact</Link>
+                                <Link to={'/contact'}>Contacto</Link>
                             </Menu.Item>
                         <Menu.Menu position='right'>
                             <Menu.Item>
-                                <Button><Link to={'/login'}>Login</Link></Button>
+                                <Button><Link to={'/login'}>Inicia sesión</Link></Button>
                             </Menu.Item>
                         </Menu.Menu>
                     </Menu>
