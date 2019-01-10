@@ -25,13 +25,13 @@ class Profile extends Component{
                 textAlign:'center'
             }}>
                 <MenuEmployee />
-                <h1>{user.name}, te quedan 3 encuestas pendientes por responder</h1>
+                <h1>{user.name}, tienes encuestas pendientes por responder</h1>
                 <Button><Link to='survey'>Responder encuestas</Link></Button>
                 <h2>Tu rol en la empresa es: {user.role}</h2>
                 <div>
                 <Card centered style={{
                     
-                }}>
+                }}> 
                     <Image src={user.profilePic} />
                     <Card.Content>
                         <Card.Header>{user.name}</Card.Header>

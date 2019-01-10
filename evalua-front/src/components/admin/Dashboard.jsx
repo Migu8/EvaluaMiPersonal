@@ -37,7 +37,7 @@ class Dashboard extends Component {
                         <span>
                             <Button><Link to='/employees'>Empleados</Link></Button>
                             <h3>---</h3>
-                            <Button><Link to='/survey'>Encuestas</Link></Button>
+                            <Button><Link to='/results'>Resultados de encuestas</Link></Button>
                         </span>
 
                     </div>

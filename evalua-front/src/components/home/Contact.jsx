@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Form, Input, TextArea, Button, Container } from 'semantic-ui-react'
 import Menuuu from './Menu';
 
@@ -54,12 +55,13 @@ const ContactUs = () => (
             label='Problemática'
             placeholder='Cuéntenos un poco acerca del problema que presenta su compañía'
           />
-          <Form.Field
+          {/* <Form.Field
             id='form-button-control-public'
             type='submit'
             control={Button}
             content='Enviar'
-          />
+          /> */}
+          <Button><Link to='/'>Enviar</Link></Button>
         </Form>
         </Container>
     </div>

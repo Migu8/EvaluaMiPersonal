@@ -1,5 +1,6 @@
 import axios from 'axios';
 const host = 'http://localhost:3000/api'
+//const host = 'https://damp-reaches-55933.herokuapp.com/api'
 
 //signup
 export const signup = (user) => {

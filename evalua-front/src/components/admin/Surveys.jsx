@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import MenuAdmin from '../home/MenuAdmin'
+import MenuEmployee from '../home/MenuEmployee'
 import SurveyList from './SurveyList';
+//const host = 'https://damp-reaches-55933.herokuapp.com/surv'
 const host = 'http://localhost:3000/surv'
 
 class Surveys extends Component {
@@ -38,11 +39,13 @@ class Surveys extends Component {
     render(){
         const {drawSurveyList} = this
         return(
-            <div>
-                <MenuAdmin />
-                <h1>Aquí está la lista de las encuestas</h1>
+            <div style={{
+                textAlign:'center'
+            }}>
+                <MenuEmployee />
+                <h1>Tus encuestas pendientes son las siguientes:</h1>
+                <br/>
                 <div>
-                    <h2>Aquí va la lista</h2>
                     {drawSurveyList()}
                 </div>
             </div>

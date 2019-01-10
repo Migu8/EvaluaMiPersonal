@@ -37,7 +37,7 @@ class AuthPage extends Component {
           else{
             console.log('You are logged in', r.role)
             localStorage.setItem('loggedUser',JSON.stringify(r))
-            this.props.history.push('/home')
+            this.props.history.push('/profile')
             console.log('Go to profile')    
           }       
      

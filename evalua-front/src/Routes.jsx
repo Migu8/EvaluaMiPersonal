@@ -12,6 +12,8 @@ import Employees from './components/admin/Employees'
 import EmpDetail from './components/admin/EmpDetail'
 import Surveys from './components/admin/Surveys'
 import SurveysList from './components/employees/SurveysList';
+import SurveyEmpForm from './components/employees/SurveyForm';
+import Results from './components/admin/Results';
 
 const Routes = () => {
 
@@ -26,10 +28,12 @@ const Routes = () => {
             <Route path='/contact' component={ContactUs} />
             <Route path='/profile' component={Profile} />
             <Route path='/dashboard' component={Dashboard} />
+            <Route path='/results' component={Results} />
             <Route exact path='/employees' component={Employees} />
             <Route path='/employees/:id' component={EmpDetail} />
             <Route path='/survey' component={Surveys} />
             <Route path='/survey' component={SurveysList} />
+            <Route path='/answer' component={SurveyEmpForm} />
         </Switch>
     )
 }

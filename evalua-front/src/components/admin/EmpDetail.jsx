@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import MenuAdmin from '../home/MenuAdmin';
+import { Image, Button } from 'semantic-ui-react'
+//const host = 'https://damp-reaches-55933.herokuapp.com/emp'
 
 class EmpDetail extends Component{
     constructor(props){
@@ -31,10 +34,19 @@ class EmpDetail extends Component{
         return(
             <div>
                 <MenuAdmin />
-                <h1>Employee detail</h1>
-                <img src={this.state.profilePic} alt='Fotuki del empleado' />
+                <br/>
+                <br/>
+                <div style={{
+                    textAlign:'center'
+                }}>
+                    <h1>Employee detail</h1>
+                <Image  centered src={this.state.profilePic} alt='Fotuki del empleado' size='medium' />
                 <h3>Área: {this.state.area}</h3>
-                <h4>El empleado ha contestado: X</h4>
+                <h4>El empleado ha contestado tiene 2 encuestas pendientes</h4>
+                <br/>
+                <Button><Link to='/employees'>Regresar</Link></Button>
+                </div>
+                
             </div>
         )
     }

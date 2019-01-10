@@ -4,7 +4,7 @@ import axios from 'axios'
 import EmpTable from './EmpTable'
 import MenuAdmin from '../home/MenuAdmin'
 import { Table, Button } from 'semantic-ui-react'
-//const host = 'http://localhost:3000/emp'
+//const host = 'https://damp-reaches-55933.herokuapp.com/emp'
 
 class AllEmployees extends Component {
 
@@ -43,9 +43,13 @@ class AllEmployees extends Component {
                 textAlign:'center'
             }}>
                 <MenuAdmin />
-                <h2>A continuación se muestran los empleados y el su status de encuestas contestadas</h2>
-                <div>
-                    <Table basic='very' celled collapsing>
+                <br/>
+                <h2 centered>A continuación se muestran los empleados y el su status de encuestas contestadas</h2>
+                <br/>
+                <div style={{
+                    paddingLeft:'42%'
+                }}>
+                    <Table basic='very' celled collapsing centered>
                         <Table.Header>
                         <Table.Row>
                             <Table.HeaderCell>Empleado</Table.HeaderCell>
